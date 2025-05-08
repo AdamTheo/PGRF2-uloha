@@ -2,6 +2,7 @@ package Projekt;
 
 
 import Projekt.global.AbstractRenderer;
+import Projekt.model.*;
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.glfw.GLFWScrollCallback;
@@ -12,39 +13,40 @@ import static Projekt.global.GluUtils.gluPerspective;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_F;
 import static org.lwjgl.opengl.GL11.*;
-import Projekt.model.Tank;
-import Projekt.model.Vertex;
-import Projekt.model.Floor;
-import Projekt.model.Solid;
-import Projekt.model.Part;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Renderer extends AbstractRenderer {
     float angle;
+    float turretAngle = 0f;
     float velocity = 0;
     //Tank configurable parameters
     float acceleration = 0.00005f;
     float max_min_speed = 0.009f;
     float braking = 0.00002f;
     float rotatinspeed = 0.7f;
+    float turretSpeed = 0.7f;
     //End of configurable parameters
     float tankX = 0.2f;
     float tankY = 0.1f;
     float  tankZ = 0;
-    Tank tank;
     Floor floor;
     boolean Wpressed = false;
     boolean Spressed = false;
     boolean Apressed = false;
     boolean Dpressed = false;
+    boolean Mpressed = false;
+    boolean Npressed = false;
 
+    Solid tankTurret;
+    Solid tank;
 
     public Renderer() {
         super();
         int angle = 0;
-
+        tank = new Tank();
+        tankTurret = new TankTurret();
 
 
 
@@ -73,6 +75,12 @@ public class Renderer extends AbstractRenderer {
                         case GLFW_KEY_D: // Steny - faces
                             Dpressed = false;
                             break;
+                        case GLFW_KEY_M: // Steny - faces
+                            Mpressed = false;
+                            break;
+                        case GLFW_KEY_N: // Steny - faces
+                            Npressed = false;
+                            break;
                     }
 
                 }
@@ -90,6 +98,12 @@ public class Renderer extends AbstractRenderer {
                             break;
                         case GLFW_KEY_D:
                             Dpressed = true;
+                            break;
+                        case GLFW_KEY_M:
+                            Mpressed = true;
+                            break;
+                        case GLFW_KEY_N:
+                            Npressed = true;
                             break;
                     }
                 }
@@ -268,6 +282,20 @@ public class Renderer extends AbstractRenderer {
             tankY = tankY - yratio*velocity;
         }
     }
+    public void turretMovement(){
+        if(Mpressed && !Npressed){
+            turretAngle -= turretSpeed;
+        }
+        if(!Mpressed && Npressed){
+            turretAngle += turretSpeed;
+        }
+        if(turretAngle >= 360){
+            turretAngle = 0;
+        }
+        if(turretAngle < 0){
+            turretAngle = 359.99f;
+        }
+    }
 
     @Override
     public void display() {
@@ -292,9 +320,11 @@ public class Renderer extends AbstractRenderer {
         movement();
         glTranslatef(tankX, tankY, tankZ+0.11f);
         glRotatef(angle,0,0,1);
-        Solid tank2 = new Tank();
-        drawSolid(tank2);
-        //drawSolid(tank.getVB(),tank.getIB());
+        drawSolid(tank);
+        turretMovement();
+        glRotatef(turretAngle,0,0,1);
+        drawSolid(tankTurret);
+
 
 
 
