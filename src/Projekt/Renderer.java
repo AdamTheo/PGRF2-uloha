@@ -181,8 +181,6 @@ public class Renderer extends AbstractRenderer {
             angle -= rotatinspeed;
         }
 
-
-
         if(Wpressed && !Spressed){
             velocity += acceleration;
             if (velocity >= max_min_speed){
@@ -218,11 +216,36 @@ public class Renderer extends AbstractRenderer {
             angle = 0;
         }
         if(angle < 0){
-            angle = 359.99f;
+            angle = 359.95f;
         }
 
+        //There sure is better solution, but I came up with this.
+        if(angle <=90){
+            float yratio = (float)angle / 90;
+            float xratio = 1 - yratio;
 
-        tankX=tankX+velocity;
+            tankX = tankX + xratio*velocity;
+            tankY = tankY + yratio*velocity;
+        }
+        if(angle > 90 && angle <=180){
+            float xratio = ((float)angle - 90)/90;
+            float yratio = 1 - xratio;
+            tankX = tankX - xratio*velocity;
+            tankY = tankY + yratio*velocity;
+        }
+        if(angle > 180 && angle <=270){
+            float yratio = ((float)angle-180)/90;
+            float xratio = 1 - yratio;
+            tankX = tankX - xratio*velocity;
+            tankY = tankY - yratio*velocity;
+        }
+        if(angle > 270 && angle <=360){
+            float xratio = ((float)angle - 270)/90;
+            float yratio = 1 - xratio;
+            tankX = tankX + xratio*velocity;
+            tankY = tankY - yratio*velocity;
+        }
+
     }
 
     @Override
