@@ -28,7 +28,7 @@ public class Renderer extends AbstractRenderer {
     float acceleration = 0.00005f;
     float max_min_speed = 0.009f;
     float braking = 0.00002f;
-    float rotatinspeed = 0.5f;
+    float rotatinspeed = 0.7f;
     //End of configurable parameters
     float tankX = 0.2f;
     float tankY = 0.1f;
@@ -135,17 +135,40 @@ public class Renderer extends AbstractRenderer {
                     Vertex b  = vertexBuffer.get(indexBuffer.get(start + i*3 +1));
                     Vertex c = vertexBuffer.get(indexBuffer.get(start + i*3 +2));
 
-                    glColor3f((float)a.getCol().getR(),(float)a.getCol().getB(),(float)a.getCol().getB());
+                    glColor3f((float)a.getCol().getR(),(float)a.getCol().getG(),(float)a.getCol().getB());
                     glVertex3f(a.getX(),a.getY(),a.getZ());
 
-                    glColor3f((float)b.getCol().getR(),(float)b.getCol().getB(),(float)b.getCol().getB());
+                    glColor3f((float)b.getCol().getR(),(float)b.getCol().getG(),(float)b.getCol().getB());
                     glVertex3f(b.getX(),b.getY(),b.getZ());
 
-                    glColor3f((float)c.getCol().getR(),(float)c.getCol().getB(),(float)c.getCol().getB());
+                    glColor3f((float)c.getCol().getR(),(float)c.getCol().getG(),(float)c.getCol().getB());
                     glVertex3f(c.getX(),c.getY(),c.getZ());
 
                 }
                 glEnd();
+            }
+            if(type.equals("TriangeStrips")){
+                glBegin(GL_TRIANGLE_STRIP);
+                    Vertex a = vertexBuffer.get(indexBuffer.get(start));
+                    Vertex b  = vertexBuffer.get(indexBuffer.get(start +1));
+                    Vertex c = vertexBuffer.get(indexBuffer.get(start + 2));
+
+                    glColor3f((float)a.getCol().getR(),(float)a.getCol().getG(),(float)a.getCol().getB());
+                    glVertex3f(a.getX(),a.getY(),a.getZ());
+
+                    glColor3f((float)b.getCol().getR(),(float)b.getCol().getG(),(float)b.getCol().getB());
+                    glVertex3f(b.getX(),b.getY(),b.getZ());
+
+                    glColor3f((float)c.getCol().getR(),(float)c.getCol().getG(),(float)c.getCol().getB());
+                    glVertex3f(c.getX(),c.getY(),c.getZ());
+
+                for(int i = 3; i < length ; i++){
+                    Vertex d = vertexBuffer.get(indexBuffer.get(start+i));
+                    glColor3f((float)d.getCol().getR(),(float)d.getCol().getG(),(float)d.getCol().getB());
+                    glVertex3f(d.getX(),d.getY(),d.getZ());
+                }
+                glEnd();
+
             }
         }
     }
@@ -210,7 +233,6 @@ public class Renderer extends AbstractRenderer {
             }
         }
 
-
         //Angles and moving forward in specific direction
         if(angle >= 360){
             angle = 0;
@@ -220,32 +242,31 @@ public class Renderer extends AbstractRenderer {
         }
 
         //There sure is better solution, but I came up with this.
-        if(angle <=90){
+        if(angle <=90){ // 1. quadrant
             float yratio = (float)angle / 90;
             float xratio = 1 - yratio;
 
             tankX = tankX + xratio*velocity;
             tankY = tankY + yratio*velocity;
         }
-        if(angle > 90 && angle <=180){
+        if(angle > 90 && angle <=180){ //2.quadrant
             float xratio = ((float)angle - 90)/90;
             float yratio = 1 - xratio;
             tankX = tankX - xratio*velocity;
             tankY = tankY + yratio*velocity;
         }
-        if(angle > 180 && angle <=270){
+        if(angle > 180 && angle <=270){ //3.quadrant
             float yratio = ((float)angle-180)/90;
             float xratio = 1 - yratio;
             tankX = tankX - xratio*velocity;
             tankY = tankY - yratio*velocity;
         }
-        if(angle > 270 && angle <=360){
+        if(angle > 270 && angle <=360){ //4.quadrant
             float xratio = ((float)angle - 270)/90;
             float yratio = 1 - xratio;
             tankX = tankX + xratio*velocity;
             tankY = tankY - yratio*velocity;
         }
-
     }
 
     @Override
