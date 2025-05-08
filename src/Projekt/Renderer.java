@@ -24,10 +24,12 @@ import java.util.List;
 public class Renderer extends AbstractRenderer {
     float angle;
     float velocity = 0;
+    //Tank configurable parameters
     float acceleration = 0.00005f;
     float max_min_speed = 0.009f;
     float braking = 0.00002f;
-
+    float rotatinspeed = 0.5f;
+    //End of configurable parameters
     float tankX = 0.2f;
     float tankY = 0.1f;
     float  tankZ = 0;
@@ -171,6 +173,16 @@ public class Renderer extends AbstractRenderer {
     }
 
     public void movement(){
+
+        if(Apressed && !Dpressed){
+            angle += rotatinspeed;
+        }
+        if(!Apressed && Dpressed){
+            angle -= rotatinspeed;
+        }
+
+
+
         if(Wpressed && !Spressed){
             velocity += acceleration;
             if (velocity >= max_min_speed){
@@ -202,7 +214,12 @@ public class Renderer extends AbstractRenderer {
 
 
         //Angles and moving forward in specific direction
-
+        if(angle >= 360){
+            angle = 0;
+        }
+        if(angle < 0){
+            angle = 359.99f;
+        }
 
 
         tankX=tankX+velocity;
