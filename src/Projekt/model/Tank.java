@@ -1,18 +1,21 @@
 package Projekt.model;
 
+import org.lwjgl.system.CallbackI;
 import transforms.Col;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tank {
+public class Tank extends Solid {
 
-    List<Vertex> VB;
-    List <Integer> IB;
+
 
     public Tank() {
         VB = new ArrayList<Vertex>();
-        IB = new ArrayList<>();
+        IB = new ArrayList<Integer>();
+        PB = new ArrayList<Part>();
+
+        PB.add(new Part("Triangles",0,12));
 
         VB.add(new Vertex(-0.2f,-0.1f,-0.1f,new Col(0x00ffff)));
         VB.add(new Vertex(0.2f,-0.1f,-0.1f,new Col(0xff00ff)));
@@ -66,15 +69,8 @@ public class Tank {
         IB.add(0);
     }
 
-    public Vertex getVertex(int i) {
-        return VB.get(i);
-    }
-    public List<Integer> getIB() {
-        return IB;
-    }
-    public List <Vertex> getVB() {
-        return VB;
-    }
+
+
 }
 
 

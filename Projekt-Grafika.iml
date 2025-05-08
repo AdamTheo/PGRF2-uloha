@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="lwjgl-release-3.3" level="application" />
+    <orderEntry type="library" name="lwjgl-release-3.3" level="application" />
+    <orderEntry type="library" exported="" name="lwjgl-stable-2019-09-19-custom" level="application" />
   </component>
 </module>
