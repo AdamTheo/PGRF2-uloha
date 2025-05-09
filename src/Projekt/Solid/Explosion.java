@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Explosion extends Solid {
 
-    public Explosion(){
+    public Explosion() {
         VB = new ArrayList<Vertex>();
         IB = new ArrayList<Integer>();
         PB = new ArrayList<Part>();
@@ -85,9 +85,7 @@ public class Explosion extends Solid {
         IB.add(29);
 
 
-
-        PB.add(new Part("Triangles",0,10));
-
+        PB.add(new Part("Triangles", 0, 10));
 
 
     }

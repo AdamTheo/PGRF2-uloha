@@ -10,12 +10,15 @@ public class Part {
         this.start = start;
         this.length = length;
     }
+
     public String getName() {
         return name;
     }
+
     public int getStart() {
         return start;
     }
+
     public int getLength() {
         return length;
     }

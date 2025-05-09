@@ -49,7 +49,6 @@ public class Renderer extends AbstractRenderer {
     OGLTexture2D skyBox_right;
     OGLTexture2D skyBox_top;
 
-    Floor floor;
     boolean Wpressed = false;
     boolean Spressed = false;
     boolean Apressed = false;
@@ -59,17 +58,18 @@ public class Renderer extends AbstractRenderer {
     boolean FirePressed = false;
     Solid tankTurret;
     Solid tank;
+    Solid explosion;
 
     public Renderer() {
         super();
         int angle = 0;
         tank = new Tank();
         tankTurret = new TankTurret();
+        explosion = new Explosion();
 
         Boolean keyDown = false; //For looping glwfkeyCallback
 
         tank = new Tank();
-        floor = new Floor();
 
         glfwKeyCallback = new GLFWKeyCallback() {
             @Override
@@ -207,18 +207,91 @@ public class Renderer extends AbstractRenderer {
         glVertex3d(-100, -100, 100);
 
         glTexCoord2f(1.0f, 0.0f);
-        glVertex3d(-100, -100, -100);
+        glVertex3d(-100, 100, 100);
 
         glTexCoord2f(1.0f, 1.0f);
         glVertex3d(-100, 100, -100);
 
         glTexCoord2f(0f, 1.0f);
+        glVertex3d(-100, -100, -100);
+        glEnd();
+
+        skyBox_front.bind();
+        glBegin(GL_QUADS);
+        glTexCoord2f(0.0f, 0.0f);
         glVertex3d(-100, 100, 100);
 
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3d(100, 100, 100);
+
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3d(100, 100, -100);
+
+        glTexCoord2f(0f, 1.0f);
+        glVertex3d(-100, 100, -100);
+        glEnd();
+
+        skyBox_right.bind();
+        glBegin(GL_QUADS);
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3d(100, 100, 100);
+
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3d(100, -100, 100);
+
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3d(100, -100, -100);
+
+        glTexCoord2f(0f, 1.0f);
+        glVertex3d(100, 100, -100);
+        glEnd();
+
+        skyBox_back.bind();
+        glBegin(GL_QUADS);
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3d(100, -100, 100);
+
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3d(-100, -100, 100);
+
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3d(-100, -100, -100);
+
+        glTexCoord2f(0f, 1.0f);
+        glVertex3d(100, -100, -100);
+        glEnd();
+
+        skyBox_bottom.bind();
+        glBegin(GL_QUADS);
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3d(-100, -100, -100);
+
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3d(-100, 100, -100);
+
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3d(100, 100, -100);
+
+        glTexCoord2f(0f, 1.0f);
+        glVertex3d(-100, 100, -100);
+        glEnd();
+
+        skyBox_top.bind();
+        glBegin(GL_QUADS);
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3d(-100, -100, 100);
+
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3d(-100, 100, 100);
+
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3d(100, 100, 100);
+
+        glTexCoord2f(0f, 1.0f);
+        glVertex3d(-100, -100, 100);
         glEnd();
 
 
-        glEnd();
         glDisable(GL_TEXTURE_2D);
     }
     public void drawSolid(Solid solid){
@@ -366,12 +439,9 @@ public class Renderer extends AbstractRenderer {
         glPushMatrix();
 
         drawAxes();
-        //drawFloor();
+        drawFloor();
         drawSkybox();
 
-        Explosion explosion = new Explosion();
-
-        drawSolid(explosion);
         movement();
         glTranslatef(tankX, tankY, tankZ+0.11f);
         glRotatef(angle,0,0,1);
@@ -391,10 +461,9 @@ public class Renderer extends AbstractRenderer {
         }
 
         textRenderer.clear();
-        textRenderer.addStr2D(3, 20, "a");
-        textRenderer.addStr2D(3, 40, "b");
-        textRenderer.addStr2D(width - 90, height - 40, "Pohyb WSAD");
-        textRenderer.addStr2D(width - 160, height - 20, "Nataceni veze-M,N. Vystrel F");
+        textRenderer.addStr2D(width - 80, height - 60, "Pohyb WSAD");
+        textRenderer.addStr2D(width - 160, height - 40, "Nataceni veze-M,N. Vystrel F");
+        textRenderer.addStr2D(width - 340, height -20, "PGRF2-Adam Theodor, Projekt Tank. Posledni editace 9.5.25");
 
 
     }

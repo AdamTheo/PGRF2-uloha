@@ -1,5 +1,5 @@
 package Projekt.model;
-import transforms.Point3D;
+
 import transforms.Col;
 
 public class Vertex {
@@ -7,7 +7,7 @@ public class Vertex {
     float x, y, z;
     Col col;
 
-    public Vertex (float x,float y,float z,Col col){
+    public Vertex(float x, float y, float z, Col col) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -17,12 +17,15 @@ public class Vertex {
     public float getX() {
         return x;
     }
+
     public float getY() {
         return y;
     }
+
     public float getZ() {
         return z;
     }
+
     public Col getCol() {
         return col;
     }
