@@ -26,9 +26,9 @@ public class Renderer extends AbstractRenderer {
     float braking = 0.00002f;
     float rotatinspeed = 0.7f;
     float turretSpeed = 0.7f;
-    int FireTime = 30;
+    int fireTime = 20;
     //End of configurable parameters
-    int FireTimer =0;
+    int fireTimer =0;
 
 
     float tankX = 0.2f;
@@ -111,6 +111,9 @@ public class Renderer extends AbstractRenderer {
                             break;
                         case GLFW_KEY_N:
                             Npressed = true;
+                            break;
+                        case GLFW_KEY_F:
+                            fireTimer = fireTime;
                             break;
                     }
                 }
@@ -285,8 +288,8 @@ public class Renderer extends AbstractRenderer {
         //For shooting purposes
 
         float radians = (float)Math.toRadians(turretAngle);
-        explosionX =tankX + (float)(Math.cos(radians) * 0.15f);
-        explosionY =tankY + (float)(Math.sin(radians) * 0.15f);
+        explosionX =tankX + (float)(Math.cos(radians) * 0.18f);
+        explosionY =tankY + (float)(Math.sin(radians) * 0.18f);
     }
 
     @Override
@@ -319,8 +322,12 @@ public class Renderer extends AbstractRenderer {
         glRotatef(turretAngle,0,0,1);
         drawSolid(tankTurret);
         glPopMatrix();
-        glTranslatef(explosionX, explosionY, explosionZ);
-        drawSolid(explosion);
+        if(fireTimer > 0){
+            fireTimer --;
+            glTranslatef(explosionX, explosionY, explosionZ);
+            drawSolid(explosion);
+        }
+
 
 
 
