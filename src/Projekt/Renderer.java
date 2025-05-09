@@ -7,6 +7,7 @@ import Projekt.Solid.Tank;
 import Projekt.Solid.TankTurret;
 import Projekt.global.AbstractRenderer;
 import Projekt.model.*;
+import lwjglutils.OGLTexture2D;
 import org.lwjgl.glfw.GLFWKeyCallback;
 
 import static Projekt.global.GluUtils.gluLookAt;
@@ -14,6 +15,7 @@ import static Projekt.global.GluUtils.gluPerspective;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Renderer extends AbstractRenderer {
@@ -30,15 +32,22 @@ public class Renderer extends AbstractRenderer {
     //End of configurable parameters
     int fireTimer =0;
 
-
     float tankX = 0.2f;
     float tankY = 0.1f;
     float tankZ = 0;
 
     float explosionX = 0;
     float explosionY = 0;
-    float explosionZ = 0.24f;
+    private float explosionZ = 0.24f;
 
+    //Textures
+     OGLTexture2D groundTexture;
+     OGLTexture2D skyBox_back;
+    OGLTexture2D skyBox_bottom;
+    OGLTexture2D skyBox_front;
+    OGLTexture2D skyBox_left;
+    OGLTexture2D skyBox_right;
+    OGLTexture2D skyBox_top;
 
     Floor floor;
     boolean Wpressed = false;
@@ -123,11 +132,34 @@ public class Renderer extends AbstractRenderer {
 
     @Override
     public void init() {
+        super.init();
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glEnable(GL_DEPTH_TEST);
+        glEnable(GL_TEXTURE_2D);
+        glDisable(GL_CULL_FACE);
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+
+        System.out.println("Loading textures...");
+        try {
+
+            groundTexture = new OGLTexture2D("textures/ground.jpg");
+            skyBox_back = new OGLTexture2D("textures/skybox_back.jpg");
+            skyBox_bottom = new OGLTexture2D("textures/skybox_bottom.jpg");
+            skyBox_front = new OGLTexture2D("textures/skybox_front.jpg");
+            skyBox_left = new OGLTexture2D("textures/skybox_left.jpg");
+            skyBox_right = new OGLTexture2D("textures/skybox_right.jpg");
+            skyBox_top = new OGLTexture2D("textures/skybox_top.jpg");
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void drawAxes(){
+        glColor3f(1.0f, 1.0f, 1.0f);
         glBegin(GL_LINES);
         glColor3f(1.0f, 0.0f, 0.0f);
         glVertex3f(0.0f, 0.0f,0.0f);
@@ -143,7 +175,54 @@ public class Renderer extends AbstractRenderer {
         glEnd();
 
     }
+    public void drawFloor(){
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glEnable(GL_TEXTURE_2D);
+        groundTexture.bind();
+        glBegin(GL_QUADS);
+        //glNormal3f(0,0,1);
+        glTexCoord2f(0, 0);
+        glVertex3f(-5f,-5f,-0.01f);
+
+        glTexCoord2f(0, 1);
+        glVertex3f(-5f,5f,-0.01f);
+
+        glTexCoord2f(1, 1);
+        glVertex3f(5f,5f,-0.01f);
+
+        glTexCoord2f(1, 0);
+        glVertex3f(5f, -5f,-0.01f);
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    }
+    public void drawSkybox(){
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glEnable(GL_TEXTURE_2D);
+        glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+
+        skyBox_left.bind();
+        glBegin(GL_QUADS);
+        glTexCoord2f(0.0f, 0.0f);
+        glVertex3d(-100, -100, 100);
+
+        glTexCoord2f(1.0f, 0.0f);
+        glVertex3d(-100, -100, -100);
+
+        glTexCoord2f(1.0f, 1.0f);
+        glVertex3d(-100, 100, -100);
+
+        glTexCoord2f(0f, 1.0f);
+        glVertex3d(-100, 100, 100);
+
+        glEnd();
+
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    }
     public void drawSolid(Solid solid){
+        glColor3f(1.0f, 1.0f, 1.0f);
         for(int p = 0; p < solid.getPB().size(); p++){ // Geting part from partbuffer
             Part part = solid.getPB().get(p);
             int start = part.getStart();
@@ -195,28 +274,6 @@ public class Renderer extends AbstractRenderer {
 
             }
         }
-    }
-
-    public void drawSolid(List <Vertex> vertexBuffer,List <Integer> indexBuffer){
-
-
-        glBegin(GL_TRIANGLES);
-        for(int i = 0; i < indexBuffer.size() ; i+=3){
-            Vertex a = vertexBuffer.get(indexBuffer.get(i));
-            Vertex b  = vertexBuffer.get(indexBuffer.get(i+1));
-            Vertex c = vertexBuffer.get(indexBuffer.get(i+2));
-
-            glColor3f((float)a.getCol().getR(),(float)a.getCol().getB(),(float)a.getCol().getB());
-            glVertex3f(a.getX(),a.getY(),a.getZ());
-
-            glColor3f((float)b.getCol().getR(),(float)b.getCol().getB(),(float)b.getCol().getB());
-            glVertex3f(b.getX(),b.getY(),b.getZ());
-
-            glColor3f((float)c.getCol().getR(),(float)c.getCol().getB(),(float)c.getCol().getB());
-            glVertex3f(c.getX(),c.getY(),c.getZ());
-
-        }
-        glEnd();
     }
 
     public void movement(){
@@ -309,8 +366,11 @@ public class Renderer extends AbstractRenderer {
         glPushMatrix();
 
         drawAxes();
+        //drawFloor();
+        drawSkybox();
+
         Explosion explosion = new Explosion();
-        drawSolid(floor.getVB(),floor.getIB()); // Drawing Floor
+
         drawSolid(explosion);
         movement();
         glTranslatef(tankX, tankY, tankZ+0.11f);
@@ -322,17 +382,19 @@ public class Renderer extends AbstractRenderer {
         glRotatef(turretAngle,0,0,1);
         drawSolid(tankTurret);
         glPopMatrix();
+
+        //Only firing effect nad projectile
         if(fireTimer > 0){
             fireTimer --;
             glTranslatef(explosionX, explosionY, explosionZ);
             drawSolid(explosion);
         }
 
-
-
-
-
-
+        textRenderer.clear();
+        textRenderer.addStr2D(3, 20, "a");
+        textRenderer.addStr2D(3, 40, "b");
+        textRenderer.addStr2D(width - 90, height - 40, "Pohyb WSAD");
+        textRenderer.addStr2D(width - 160, height - 20, "Nataceni veze-M,N. Vystrel F");
 
 
     }

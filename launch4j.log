@@ -1,0 +1,200 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\theod\Desktop\Projekt-Grafika\Projekt.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\theod\Desktop\Projekt-Grafika\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.024.000
+Java max ver:	1.025.000
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\theod\AppData\Local\Microsoft\WindowsApps;C:\Users\theod\.dotnet\tools;C:\Users\theod\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jre-1.8\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\theod\AppData\Local\Microsoft\WindowsApps;C:\Users\theod\.dotnet\tools;C:\Users\theod\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jre-1.8\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Common Files\Oracle\Java\java8path\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Users\theod\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\theod\.dotnet\tools\bin\javaw.exe (not found)
+Check launcher:	C:\Users\theod\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jre-1.8\bin\javaw.exe (OK)
+Version string: 1.008.000_411 / 64-Bit (Ignore)
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Version string: 1.008.000 / 64-Bit (Ignore)
+Ignore:		1.008.000
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_411
+Version string: 1.008.000_411 / 64-Bit (Ignore)
+Ignore:		1.008.000_411
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\24.0.1
+Version string: 1.024.000_001 / 64-Bit (OK)
+Check launcher:	C:\Program Files\Java\jdk-24\bin\javaw.exe (OK)
+Match:		1.024.000_001
+Runtime used:	1.024.000_001 (64-bit)
+Main class:	Projekt.App
+Add classpath:	lwjgl-stable-2019-09-19-custom\*.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-assimp-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-assimp-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-assimp-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-assimp.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-bgfx-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-bgfx-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-bgfx-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-bgfx.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-cuda-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-cuda-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-cuda.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-egl-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-egl-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-egl.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-glfw-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-glfw-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-glfw-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-glfw.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jawt-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jawt-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jawt.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-libdivide-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-libdivide-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-libdivide-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-libdivide.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-llvm-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-llvm-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-llvm-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-llvm.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lmdb-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lmdb-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lmdb-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lmdb.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lz4-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lz4-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lz4-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-lz4.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-meow-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-meow-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-meow-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-meow.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nanovg-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nanovg-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nanovg-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nanovg.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nfd-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nfd-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nfd-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nfd.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nuklear-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nuklear-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nuklear-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-nuklear.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-odbc-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-odbc-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-odbc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openal-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openal-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openal-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openal.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opencl-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opencl-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opencl.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengl-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengl-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengl-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengl.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengles-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengles-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengles-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opengles.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openvr-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openvr-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openvr-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-openvr.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opus-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opus-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opus-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-opus.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-ovr-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-ovr-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-ovr-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-ovr.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-par-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-par-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-par-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-par.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-remotery-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-remotery-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-remotery-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-remotery.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-sse-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-sse-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-sse-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-sse.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-stb-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-stb-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-stb-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-stb.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tootle-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tootle-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tootle-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-tootle.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vma-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vma-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vma-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vma.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vulkan-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vulkan-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-vulkan.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-xxhash-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-xxhash-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-xxhash-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-xxhash.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-yoga-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-yoga-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-yoga-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-yoga.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-zstd-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-zstd-natives-windows.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-zstd-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl-zstd.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjgl.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjglx-debug-1.0.0-javadoc.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjglx-debug-1.0.0-sources.jar
+      "      :	lwjgl-stable-2019-09-19-custom\lwjglx-debug-1.0.0.jar
+Launcher:	C:\Program Files\Java\jdk-24\bin\javaw.exe
+Launcher args:	-classpath "out\artifacts\Projekt_Grafika_jar\Projekt-Grafika.jar;lwjgl-stable-2019-09-19-custom\lwjgl-assimp-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-assimp-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-assimp-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-assimp.jar;lwjgl-stable-2019-09-19-custom\lwjgl-bgfx-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-bgfx-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-bgfx-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-bgfx.jar;lwjgl-stable-2019-09-19-custom\lwjgl-cuda-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-cuda-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-cuda.jar;lwjgl-stable-2019-09-19-custom\lwjgl-egl-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-egl-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-egl.jar;lwjgl-stable-2019-09-19-custom\lwjgl-glfw-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-glfw-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-glfw-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-glfw.jar;lwjgl-stable-2019-09-19-custom\lwjgl-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jawt-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jawt-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jawt.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-jemalloc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-libdivide-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-libdivide-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-libdivide-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-libdivide.jar;lwjgl-stable-2019-09-19-custom\lwjgl-llvm-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-llvm-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-llvm-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-llvm.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lmdb-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lmdb-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lmdb-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lmdb.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lz4-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lz4-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lz4-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-lz4.jar;lwjgl-stable-2019-09-19-custom\lwjgl-meow-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-meow-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-meow-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-meow.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nanovg-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nanovg-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nanovg-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nanovg.jar;lwjgl-stable-2019-09-19-custom\lwjgl-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nfd-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nfd-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nfd-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nfd.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nuklear-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nuklear-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nuklear-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-nuklear.jar;lwjgl-stable-2019-09-19-custom\lwjgl-odbc-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-odbc-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-odbc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openal-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openal-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openal-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openal.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opencl-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opencl-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opencl.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengl-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengl-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengl-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengl.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengles-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengles-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengles-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opengles.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openvr-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openvr-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openvr-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-openvr.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opus-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opus-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opus-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-opus.jar;lwjgl-stable-2019-09-19-custom\lwjgl-ovr-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-ovr-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-ovr-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-ovr.jar;lwjgl-stable-2019-09-19-custom\lwjgl-par-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-par-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-par-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-par.jar;lwjgl-stable-2019-09-19-custom\lwjgl-remotery-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-remotery-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-remotery-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-remotery.jar;lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-rpmalloc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-sse-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-sse-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-sse-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-sse.jar;lwjgl-stable-2019-09-19-custom\lwjgl-stb-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-stb-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-stb-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-stb.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyexr.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tinyfd.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tootle-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tootle-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tootle-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-tootle.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vma-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vma-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vma-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vma.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vulkan-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vulkan-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-vulkan.jar;lwjgl-stable-2019-09-19-custom\lwjgl-xxhash-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-xxhash-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-xxhash-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-xxhash.jar;lwjgl-stable-2019-09-19-custom\lwjgl-yoga-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-yoga-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-yoga-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-yoga.jar;lwjgl-stable-2019-09-19-custom\lwjgl-zstd-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjgl-zstd-natives-windows.jar;lwjgl-stable-2019-09-19-custom\lwjgl-zstd-sources.jar;lwjgl-stable-2019-09-19-custom\lwjgl-zstd.jar;lwjgl-stable-2019-09-19-custom\lwjgl.jar;lwjgl-stable-2019-09-19-custom\lwjglx-debug-1.0.0-javadoc.jar;lwjgl-stable-2019-09-19-custom\lwjglx-debug-1.0.0-sources.jar;lwjgl-stable-2019-09-19-custom\lwjglx-debug-1.0.0.jar" Projekt.App
+Args length:	8009/32768 chars
+Exit code:	0
