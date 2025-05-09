@@ -1,10 +1,10 @@
-package Projekt.model;
+package Projekt.Solid;
 
-import org.lwjgl.system.CallbackI;
+import Projekt.model.Part;
+import Projekt.model.Vertex;
 import transforms.Col;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Tank extends Solid {
 

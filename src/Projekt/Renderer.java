@@ -1,20 +1,19 @@
 package Projekt;
 
 
+import Projekt.Solid.Explosion;
+import Projekt.Solid.Solid;
+import Projekt.Solid.Tank;
+import Projekt.Solid.TankTurret;
 import Projekt.global.AbstractRenderer;
 import Projekt.model.*;
-import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWKeyCallback;
-import org.lwjgl.glfw.GLFWScrollCallback;
-import org.lwjgl.glfw.GLFWWindowSizeCallback;
 
 import static Projekt.global.GluUtils.gluLookAt;
 import static Projekt.global.GluUtils.gluPerspective;
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_F;
 import static org.lwjgl.opengl.GL11.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Renderer extends AbstractRenderer {
@@ -27,10 +26,20 @@ public class Renderer extends AbstractRenderer {
     float braking = 0.00002f;
     float rotatinspeed = 0.7f;
     float turretSpeed = 0.7f;
+    int FireTime = 30;
     //End of configurable parameters
+    int FireTimer =0;
+
+
     float tankX = 0.2f;
     float tankY = 0.1f;
-    float  tankZ = 0;
+    float tankZ = 0;
+
+    float explosionX = 0;
+    float explosionY = 0;
+    float explosionZ = 0.24f;
+
+
     Floor floor;
     boolean Wpressed = false;
     boolean Spressed = false;
@@ -38,7 +47,7 @@ public class Renderer extends AbstractRenderer {
     boolean Dpressed = false;
     boolean Mpressed = false;
     boolean Npressed = false;
-
+    boolean FirePressed = false;
     Solid tankTurret;
     Solid tank;
 
@@ -47,8 +56,6 @@ public class Renderer extends AbstractRenderer {
         int angle = 0;
         tank = new Tank();
         tankTurret = new TankTurret();
-
-
 
         Boolean keyDown = false; //For looping glwfkeyCallback
 
@@ -255,32 +262,11 @@ public class Renderer extends AbstractRenderer {
             angle = 359.95f;
         }
 
-        //There sure is better solution, but I came up with this.
-        if(angle <=90){ // 1. quadrant
-            float yratio = (float)angle / 90;
-            float xratio = 1 - yratio;
+        float radians = (float)Math.toRadians(angle);
+        tankX =tankX + (float)(Math.cos(radians) * velocity);
+        tankY =tankY + (float)(Math.sin(radians) * velocity);
 
-            tankX = tankX + xratio*velocity;
-            tankY = tankY + yratio*velocity;
-        }
-        if(angle > 90 && angle <=180){ //2.quadrant
-            float xratio = ((float)angle - 90)/90;
-            float yratio = 1 - xratio;
-            tankX = tankX - xratio*velocity;
-            tankY = tankY + yratio*velocity;
-        }
-        if(angle > 180 && angle <=270){ //3.quadrant
-            float yratio = ((float)angle-180)/90;
-            float xratio = 1 - yratio;
-            tankX = tankX - xratio*velocity;
-            tankY = tankY - yratio*velocity;
-        }
-        if(angle > 270 && angle <=360){ //4.quadrant
-            float xratio = ((float)angle - 270)/90;
-            float yratio = 1 - xratio;
-            tankX = tankX + xratio*velocity;
-            tankY = tankY - yratio*velocity;
-        }
+
     }
     public void turretMovement(){
         if(Mpressed && !Npressed){
@@ -295,6 +281,12 @@ public class Renderer extends AbstractRenderer {
         if(turretAngle < 0){
             turretAngle = 359.99f;
         }
+
+        //For shooting purposes
+
+        float radians = (float)Math.toRadians(turretAngle);
+        explosionX =tankX + (float)(Math.cos(radians) * 0.15f);
+        explosionY =tankY + (float)(Math.sin(radians) * 0.15f);
     }
 
     @Override
@@ -307,23 +299,28 @@ public class Renderer extends AbstractRenderer {
         glLoadIdentity();
         gluPerspective(45, width / (float) height, 0.1f, 200.0f);
 
-
-
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
         gluLookAt(1.3f, 1.3f, 0.9f, tankX, tankY, tankZ, 0, 0, 1);
         glPushMatrix();
+        glPushMatrix();
 
         drawAxes();
+        Explosion explosion = new Explosion();
         drawSolid(floor.getVB(),floor.getIB()); // Drawing Floor
-
+        drawSolid(explosion);
         movement();
         glTranslatef(tankX, tankY, tankZ+0.11f);
         glRotatef(angle,0,0,1);
         drawSolid(tank);
+        glPopMatrix();
         turretMovement();
+        glTranslatef(tankX, tankY, tankZ+0.11f);
         glRotatef(turretAngle,0,0,1);
         drawSolid(tankTurret);
+        glPopMatrix();
+        glTranslatef(explosionX, explosionY, explosionZ);
+        drawSolid(explosion);
 
 
 

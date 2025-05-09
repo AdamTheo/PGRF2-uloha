@@ -1,4 +1,7 @@
-package Projekt.model;
+package Projekt.Solid;
+
+import Projekt.model.Part;
+import Projekt.model.Vertex;
 
 import java.util.List;
 
