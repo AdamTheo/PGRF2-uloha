@@ -20,43 +20,43 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 
 public class Renderer extends AbstractRenderer {
-    float angle;
-    float turretAngle = 0f;
-    float velocity = 0;
+    private float angle;
+    private float turretAngle = 0f;
+    private float velocity = 0;
     //Tank configurable parameters
-    float acceleration = 0.00005f;
-    float max_min_speed = 0.009f;
-    float braking = 0.00002f;
-    float rotatinspeed = 0.7f;
-    float turretSpeed = 0.7f;
-    int fireTime = 20;
+    private float acceleration = 0.00005f;
+    private float max_min_speed = 0.009f;
+    private float braking = 0.00002f;
+    private float rotatinspeed = 0.7f;
+    private float turretSpeed = 0.7f;
+    private int fireTime = 20;
     //End of configurable parameters
-    int fireTimer = 0;
+    private int fireTimer = 0;
 
-    float tankX = 0.2f;
-    float tankY = 0.1f;
-    float tankZ = 0;
+    private float tankX = 0.2f;
+    private float tankY = 0.1f;
+    private float tankZ = 0;
 
-    float explosionX = 0;
-    float explosionY = 0;
+    private float explosionX = 0;
+    private float explosionY = 0;
     //Textures
-    OGLTexture2D groundTexture;
-    OGLTexture2D skyBox_back;
-    OGLTexture2D skyBox_bottom;
-    OGLTexture2D skyBox_front;
-    OGLTexture2D skyBox_left;
-    OGLTexture2D skyBox_right;
-    OGLTexture2D skyBox_top;
-    boolean Wpressed = false;
-    boolean Spressed = false;
-    boolean Apressed = false;
-    boolean Dpressed = false;
-    boolean Mpressed = false;
-    boolean Npressed = false;
-    boolean FirePressed = false;
-    Solid tankTurret;
-    Solid tank;
-    Solid explosion;
+    private OGLTexture2D groundTexture;
+    private OGLTexture2D skyBox_back;
+    private OGLTexture2D skyBox_bottom;
+    private OGLTexture2D skyBox_front;
+    private OGLTexture2D skyBox_left;
+    private OGLTexture2D skyBox_right;
+    private OGLTexture2D skyBox_top;
+    private boolean Wpressed = false;
+    private boolean Spressed = false;
+    private boolean Apressed = false;
+    private boolean Dpressed = false;
+    private boolean Mpressed = false;
+    private boolean Npressed = false;
+    private boolean FirePressed = false;
+    private Solid tankTurret;
+    private Solid tank;
+    private Solid explosion;
     private final float explosionZ = 0.24f;
 
     public Renderer() {
@@ -467,12 +467,10 @@ public class Renderer extends AbstractRenderer {
             glTranslatef(explosionX, explosionY, explosionZ);
             drawSolid(explosion);
         }
-
         textRenderer.clear();
         textRenderer.addStr2D(width - 80, height - 60, "Pohyb WSAD");
         textRenderer.addStr2D(width - 160, height - 40, "Nataceni veze-M,N. Vystrel F");
         textRenderer.addStr2D(width - 340, height - 20, "PGRF2-Adam Theodor, Projekt Tank. Posledni editace 9.5.25");
-
 
     }
 
